@@ -5,19 +5,57 @@ const { Server } = require("socket.io");
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server); // it'll handle socket 
+const io = new Server(server);
 
-//Socket.io
-io.on("connection", (socket) => {
-    socket.on("user-message", (message) => {
-     io.emit("message", message);
-    });
+let onlineUsers = 0;
+
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.use(express.static(path.resolve("./public")));
+io.on("connection", (socket) => {
+  onlineUsers++;
+  io.emit("online-users", onlineUsers);
 
-app.get('/', (req,res) => {
-    return res.sendFile("/public/index.html");  
-}); //for http express handle will handle and for web socket 
+  socket.on("join-room", ({ username, room }) => {
+    socket.username = username;
+    socket.room = room;
+    socket.join(room);
 
-server.listen(9000, () => console.log(`Server Started at PORT:9000`))
+    io.to(room).emit("system-message", `${username} joined ${room}`);
+  });
+
+  socket.on("user-message", (message) => {
+    io.to(socket.room).emit("message", {
+      user: socket.username,
+      text: message,
+      time: new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit"
+      })
+    });
+  });
+
+  socket.on("typing", () => {
+    socket.broadcast.to(socket.room).emit("typing", socket.username);
+  });
+
+  socket.on("disconnect", () => {
+    onlineUsers--;
+    io.emit("online-users", onlineUsers);
+
+    if (socket.username && socket.room) {
+      io.to(socket.room).emit(
+        "system-message",
+        `${socket.username} left the chat`
+      );
+    }
+  });
+});
+
+const PORT = process.env.PORT || 9000;
+server.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
+});
