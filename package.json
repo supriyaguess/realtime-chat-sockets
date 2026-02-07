@@ -1,0 +1,26 @@
+{
+  "name": "realtime-chat-sockets",
+  "version": "1.0.0",
+  "description": "A simple real-time chat application built to learn **WebSockets and Socket.IO**. The project focuses on understanding real-time client–server communication.",
+  "homepage": "https://github.com/supriyaguess/realtime-chat-sockets#readme",
+  "bugs": {
+    "url": "https://github.com/supriyaguess/realtime-chat-sockets/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supriyaguess/realtime-chat-sockets.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "i": "^0.3.7",
+    "npm": "^11.9.0",
+    "socket.io": "^4.8.3"
+  }
+}
