@@ -5,7 +5,12 @@ const { Server } = require("socket.io");
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server ,{
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
+});
 
 let onlineUsers = 0;
 
@@ -57,5 +62,5 @@ io.on("connection", (socket) => {
 
 const PORT = process.env.PORT || 9000;
 server.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
