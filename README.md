@@ -7,8 +7,6 @@ This project demonstrates WebSocket-based real-time communication, room-based me
 🔗 Live Demo:
 👉 https://realtime-chat-sockets.onrender.com
 
-(Replace with your actual Render link)
-
 🚀 Project Overview
 
 This application enables users to:
