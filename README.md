@@ -1,13 +1,13 @@
-💬 Realtime Chat Application
+**💬 Realtime Chat Application**
 
 A real-time multi-room chat application built using Node.js, Express, and Socket.IO.
 
 This project demonstrates WebSocket-based real-time communication, room-based messaging, and live user tracking — deployed in production on Render.
 
-🔗 Live Demo:
+**🔗 Live Demo:**
 👉 https://realtime-chat-sockets.onrender.com
 
-🚀 Project Overview
+**🚀 Project Overview**
 
 This application enables users to:
 
@@ -23,7 +23,7 @@ Switch between light and dark mode
 
 The project focuses on real-time system design and event-driven architecture.
 
-✨ Key Features
+**✨ Key Features**
 🔄 Real-Time Messaging
 
 Instant message broadcasting
@@ -44,16 +44,16 @@ Displays when a user is typing
 
 Auto-clears after inactivity
 
-🎨 UI Features
+**🎨 UI Features**
 
 Clean responsive design
 
 Auto-scroll to latest message
 
 Dark mode toggle
-
-🛠 Tech Stack
-Backend
+**
+🛠 Tech Stack**
+**Backend**
 
 Node.js
 
@@ -61,7 +61,7 @@ Express.js
 
 Socket.IO
 
-Frontend
+**Frontend**
 
 HTML
 
@@ -73,7 +73,7 @@ Deployment
 
 Render (Web Service Hosting)
 
-📂 Project Structure
+**📂 Project Structure**
 realtime-chat-sockets/
 │
 ├── public/
@@ -85,7 +85,7 @@ realtime-chat-sockets/
 ├── package.json
 └── README.md
 
-⚙️ Local Setup Instructions
+**⚙️ Local Setup Instructions**
 1️⃣ Clone Repository
 git clone https://github.com/supriyaguess/realtime-chat-sockets.git
 cd realtime-chat-sockets
@@ -99,9 +99,9 @@ npm start
 
 Server runs at:
 
-http://localhost:9000
+**http://localhost:9000**
 
-🌍 Deployment Details
+**🌍 Deployment Details**
 
 Hosted on Render
 
@@ -114,7 +114,7 @@ WebSocket support enabled via Socket.IO
 
 CORS configured for production deployment
 
-🧠 Technical Concepts Demonstrated
+**🧠 Technical Concepts Demonstrated**
 
 WebSocket-based real-time communication
 
@@ -128,8 +128,8 @@ State management (online users count)
 
 Production deployment of Node.js WebSocket app
 
-📈 Future Improvements
-
+**📈 Future Improvements
+**
 Store messages in MongoDB
 
 Add authentication system (login instead of prompt)
@@ -144,5 +144,5 @@ Convert frontend to React (MERN upgrade)
 
 👩‍💻 Author
 
-Supriya Kumari
+**Supriya Kumari**
 GitHub: https://github.com/supriyaguess
